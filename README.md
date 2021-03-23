@@ -2,8 +2,7 @@ Create Virtual Environment
 ---------------------------------------
 virtualenv -p /path/to/python3.6 venv
 
-* Activate the environment
-  source venv/bin/activate
+* Activate the environment : source venv/bin/activate
 
 Install the packages
 ---------------------------------------
