@@ -5,13 +5,13 @@ import generate
 import os
 import sys
 
-if getattr(sys, 'frozen', False):
-    template_folder = os.path.join(sys._MEIPASS, 'templates')
-    app = Flask(__name__, template_folder=template_folder)
-else:
-    app = Flask(__name__)
+# if getattr(sys, 'frozen', False):
+#     template_folder = os.path.join(sys._MEIPASS, 'templates')
+#     app = Flask(__name__, template_folder=template_folder)
+# else:
+#     app = Flask(__name__)
 
-# app = Flask(__name__)
+app = Flask(__name__)
 
 @app.route("/")
 def index():
@@ -75,4 +75,6 @@ def gen_docx():
         attachment_filename='Agriculture.docx')
  
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+    # app.run(debug=True)
