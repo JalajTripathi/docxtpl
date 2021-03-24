@@ -9,243 +9,241 @@
 	    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 		<!-- <script src="https://www.google.com/jsapi"></script> -->
 		<style>
+			body{
+				background: linear-gradient(to right, #AA076B, #61045F);
+				color: white;
+				font-family: 'Poppins', sans-serif;
+			}
 			tbody > tr > td{
-				margin: 1rem 3rem;
+				display: inline-block;
+				margin: 1rem;
+				text-align: center;
 			}
 
 			p{
 				display: inline-block;
-				margin: 1rem 3rem;
-				text-align: right;
+				text-align: end;
+				color: white;
 			}
 			.upload_btn{
+				font-family: 'Poppins',sans-serif;
 				font-size: 20px;
-				width: 200px;
-				height: 40px;
-				border-radius: 30px;
-				border: 1px solid #661EAE;
+				width: 250px;
+				height: 50px;
+				border-radius: 5px;
+				border: 1px solid transparent;
 				color: white;
-				margin: 5% 50%;
+				padding: .5em 2em;
+				margin: 5% 40%;
 				background: linear-gradient(to right, #a86ce6, #661eae);
+				box-shadow: 0 8px 32px 0 rgb(37, 38, 51, 0.8);
 			}
 			.main-section{
-				margin: 0 10%;
+				/*width: 100%;*/
+				margin: 0 10px;
+				padding: 0 20px;
+				overflow-x: hidden;
 			}
+			.add_more{
+				border: none;
+				background: transparent;
+				color: #5eb4ff;
+				font-weight: 500;
+				text-align: center;
+				width: 100%;
+				margin: 5% 50%;
+			}
+			input[type=text], textarea[type=text] {
+				width: 100%;
+				/*padding: 12px 20px;*/
+				color: white;
+				padding: 12px 1rem;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
+				background: rgba( 255, 255, 255, 0.5);
+				box-shadow: 0 8px 32px 0 rgb(37, 38, 51, 0.8);
+				border-radius: 1rem;
+				margin-block-start: 1em;
+				margin-block-end: 1em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+
+			}
+			
+
 		</style>
 	</head>
 
 	<body>
         
-		<div class="container" style="margin-bottom: 5rem;">
-			<h1 style="text-align: center">Agriculture Agreement Form</h1>
+		<div class="container" style="margin-bottom: 5rem; padding-top: 5rem;">
+			<h1 style="text-align: center; color: white; font-size: 4rem;">Agriculture Agreement Form</h1>
 		</div>
 		<form action="/gen" method=POST>
 		<div class="main-section">
 			<table style="width: 100%">
-				<!-- <thead>
-					<tr>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead> -->
+				<thead>
+					<!-- <tr>
+						<th>a</th>
+						<th>b</th>
+						<th>c</th>
+						<th>d</th>
+						<th>e</th>
+					</tr> -->
+				</thead>
 
 				<tbody id="gata_outer">
 					<tr>
 						<td>
 							<p>विक्रय मूल्य</p>
-						</td>
-						<td>
-							<input type="text" id ="विक्रय_मूल्य" name="विक्रय_मूल्य" required/>
+							<input type="text" id ="विक्रय_मूल्य" name="विक्रय_मूल्य"/>
 						</td>
 
 						<td>
-							<p>विक्रय मूल्य (शब्दों में)</p>
-						</td>
-						<td>
-							<input type="text" id ="विक्रय_मूल्य_शब्दों_में" name="विक्रय_मूल्य_शब्दों_में" required/>
+							<p>विक्रय मूल्य(शब्दों में)</p>
+							<input type="text" id ="विक्रय_मूल्य_शब्दों_में" name="विक्रय_मूल्य_शब्दों_में"/>
 						</td>
 						
-					</tr>
-
-					<tr>
 						<td>
 							<p>मालियत</p>
-						</td>
-						<td>
 							<input type="text" id ="मालियत" name="मालियत" />
 						</td>
 
 						<td>
 							<p>देय स्टाम्प</p>
-						</td>
-						<td>
 							<input type="text" id ="देय_स्टाम्प" name="देय_स्टाम्प" />
 						</td>
+					</tr>
 
+					<tr>
 						<td>
-							<p>क्षेत्र दर</p>
-						</td>
-						<td>
+							<p>क्षेत्र दर&nbsp;&nbsp;&nbsp;&nbsp;</p>
 							<input type="text" id ="क्षेत्र_दर" name="क्षेत्र_दर" />
 						</td>
-					</tr>
-
-					
-
-					<tr>
-						<td style="width: 100%">
-							<p style="margin: 0 !important">विक्रेता व क्रेता दोनों अनुसूचित जाति से है?</p>
+						<td>
+							<p>सम्पत्ति का विवरण&nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<input type="text" id ="सम्पत्ति_का_विवरण" name="सम्पत्ति_का_विवरण" />
 						</td>
-						<td style="width: 100%">
+						<td>
+							<p>ग्राम कोड</p>
+							<input type="text" id ="ग्राम_कोड" name="ग्राम_कोड" />
+						</td>
+
+						<td>
+							<p>ग्राम&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<input type="text" id ="ग्राम" name="ग्राम" />
+						</td>	
+					</tr>
+					
+					<tr>
+						<td>
+							<p style="text-align: left">विक्रेता व क्रेता दोनों अनुसूचित जाति से है?</p>
+						</td>
+						<td>
 							<input type="checkbox" name="a" value="foØsrk o Øsrk nksuksa vuqlwfpr tkfr ls gSA" />
 						</td>
-					</tr>
-
-					<tr>
-						<td style="width: 100%">
-							<p style="margin: 0 !important">विक्रेता व क्रेता दोनों अनुसूचित जाति से नही है?</p>
+						<td>
+							<p style="text-align: left">विक्रेता व क्रेता दोनों अनुसूचित जाति से नही है?</p>
 						</td>
-						<td style="width: 100%">
+						<td>
 							<input type="checkbox" name="a" value="foØsrk o Øsrk nksuksa vuqlwfpr tkfr ls ugh gSA" />
 						</td>
-					</tr>
 
-					<tr>
-						<td style="width: 100%">
-							<p style="margin: 0 !important">विक्रेता अनुसूचित जाति का व क्रेता अनुसूचित जाति का सदस्य नहीं है?</p>
+						<td>
+							<p style="text-align: left">विक्रेता अनुसूचित जाति का व क्रेता अनुसूचित जाति का सदस्य नहीं है?</p>
 						</td>
-						<td style="width: 100%">
+						<td>
 							<input type="checkbox" name="a" value="foØsrk vuqlwfpr tkfr dk lnL; gS o Øsrk vuqlwfpr tkfr dk lnL; ugha gSA ftldh l{ke vf/kdkjh }kjk foØ; vuqefr çkIr gSA" />
 						</td>
-					</tr>
 
-					<tr>
-						<td style="width: 100%">
-							<p style="margin: 0 !important">क्रेता अनुसूचित जाति का व विक्रेता अनुसूचित जाति का सदस्य नहीं है?</p>
+						<td>
+							<p style="text-align: left">क्रेता अनुसूचित जाति का व विक्रेता अनुसूचित जाति का सदस्य नहीं है?</p>
 						</td>
-						<td style="width: 100%">
+						<td>
 							<input type="checkbox" name="a" value="Øsrk vuqlwfpr tkfr dk lnL; gS o foØsrk vuqlwfpr tkfr dk lnL; ugha gSA ftldh l{ke vf/kdkjh }kjk foØ; vuqefr çkIr gSA" />
 						</td>
 
 					</tr>
 
 					<tr>
-
 						<td>
-							<p>ग्राम_कोड</p>
-						</td>
-						<td>
-							<input type="text" id ="ग्राम_कोड" name="ग्राम_कोड" />
-						</td>
-
-						<td>
-							<p>ग्राम</p>
-						</td>
-						<td>
-							<input type="text" id ="ग्राम" name="ग्राम" />
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<p>सम्पत्ति_का_विवरण</p>
-						</td>
-						<td>
-							<input type="text" id ="सम्पत्ति_का_विवरण" name="सम्पत्ति_का_विवरण" />
-						</td>
-
-						<td>
-							<p>संपत्ति_का_क्षेत्रफल</p>
-						</td>
-						<td>
+							<p>संपत्ति का क्षेत्रफल</p>
 							<textarea type="text" id ="संपत्ति_का_क्षेत्रफल" name="संपत्ति_का_क्षेत्रफल"></textarea>
 						</td>
-					</tr>
 
-					<tr>
-						
-					</tr>
-
-					<tr>
-						<td>
-							<p>प्रतिफल_की_धनराशि</p>
-						</td>
-						<td>
+						<td><p>प्रतिफल की धनराशि</p>
 							<input type="text" id ="प्रतिफल_की_धनराशि" name="प्रतिफल_की_धनराशि" />
 						</td>
 					</tr>
 
 					<tr>
-						<td>
-							<p>विक्रेता_का_विवरण </p>
-						</td>
-						<td>
+
+						<td><p>विक्रेता का विवरण </p>
 							<textarea type="text" id ="विक्रेता_का_विवरण" name="विक्रेता_का_विवरण"></textarea>
 						</td>
 
 						<td>
-							<p>विक्रेता_का_आधार</p>
+							<p>विक्रेता का आधार</p>
 							<input type="text" id ="विक्रेता_का_आधार" name="विक्रेता_का_आधार" />
 						</td>
 
 						<td>
-							<p>विक्रेता_का_फ़ोन</p>
+							<p>विक्रेता का फ़ोन</p>
 							<input type="text" id ="विक्रेता_का_फ़ोन" name="विक्रेता_का_फ़ोन" />
 						</td>
 
 						<td>
-							<p>विक्रेता_का_पैन</p>
+							<p>विक्रेता का पैन</p>
 							<input type="text" id ="विक्रेता_का_पैन" name="विक्रेता_का_पैन" />
 						</td>
 					</tr>
 
 					<tr>
-						<td>
-							<p>क्रेता_का_विवरण</p> 
-						</td>
-						<td>
+						<td><p>क्रेता का विवरण&nbsp;&nbsp;</p> 
 							<textarea type="text" id ="क्रेता_का_विवरण" name="क्रेता_का_विवरण" ></textarea>
 						</td>
 
-						<td>
-							<p>क्रेता_का_आधार</p>
+						<td >
+							<p>क्रेता का आधार&nbsp;&nbsp;</p>
 							<input type="text" id ="क्रेता_का_आधार" name="क्रेता_का_आधार" />
 						</td>
 
-						<td>
-							<p>क्रेता_का_फ़ोन</p>
+						<td >
+							<p>क्रेता का फ़ोन&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 							<input type="text" id ="क्रेता_का_फ़ोन" name="क्रेता_का_फ़ोन" />
 						</td>
 
-						<td>
-							<p>क्रेता_का_पैन</p>
+						<td >
+							<p>क्रेता का पैन&nbsp;&nbsp;&nbsp;&nbsp;</p>
 							<input type="text" id ="क्रेता_का_पैन" name="क्रेता_का_पैन" />
 						</td>
 
 					</tr>
 
 					<tr id="gata_inner">
-						<td>
-							<p>चौहद्दी: विक्रीत भूमि गाटा संख्या –</p>
-						</td>
-						<td>
+						<td >
+							<p>चौहद्दी: गाटा संख्या</p>
 							<input type="text" id="चौहद्दी_गाटा_संख्या" name="चौहद्दी_गाटा_संख्या[]">
 						</td>
 						<td>
-							<p>पूरब</p>
+							<p>पूरब&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 							<input type="text" id="पूरब[]" name="पूरब[]">
 						</td>
 						
 						<td>
-							<p>पश्चिम</p>
+							<p>पश्चिम&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 							<input type="text" id="पश्चिम" name="पश्चिम[]">
 						</td>
 						
 						<td>
-							<p>उत्तर</p>
+							<p>उत्तर&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 							<input type="text" id="उत्तर" name="उत्तर[]">
 						</td>
 						
@@ -253,14 +251,76 @@
 							<p>दक्षिण</p>
 							<input type="text" id="दक्षिण" name="दक्षिण[]">
 						</td>
+
 						
 						
 					</tr>
-					<tr>
-						<td>
-							<button type="button" onclick="myFunction()">Add</button>
+
+					<tr >
+						<td style="margin-inline-start: 40%;">
+							<button class="add_more" type="button" onclick="myFunction()">+ Add more sections</button>
 						</td>
 					</tr>
+
+					<tr style="padding-top: 100px;">
+						<td><p>1. गवाहान का नाम</p></td>
+						<td><input type="text" id="गवाहान_का_नाम_1" name="गवाहान_का_नाम_1"></td>
+
+						<td><p>पता</p></td>
+						<td><input type="text" id="गवाहान_का_पता_1" name="गवाहान_का_पता_1"></td>
+
+						<td><p>फ़ोन</p></td>
+						<td><input type="text" id="गवाहान_का_फ़ोन_1" name="गवाहान_का_फ़ोन_1"></td>
+
+						<td><p>पिता का नाम</p></td>
+						<td><input type="text" id="गवाहान_का_पिता_का_नाम_1" name="गवाहान_का_पिता_का_नाम_1"></td>
+					</tr>
+
+					<tr>
+						<td style="padding-top: 1rem; margin-inline-start: 40%;"><p style="font-size: 18px; font-weight: 700">लिंग:</p></td>
+						<td>पुरुष&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="लिंग_1" value="पुत्र" /></td>
+						<td>महिला&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="लिंग_1" value="पुत्री" /></td>
+						
+					</tr>
+
+					<tr>
+						<td><p>2. गवाहान का नाम</p></td>
+						<td><input type="text" id="गवाहान_का_नाम_2" name="गवाहान_का_नाम_2"></td>
+
+						<td><p>पता</p></td>
+						<td><input type="text" id="गवाहान_का_पता_2" name="गवाहान_का_पता_2"></td>
+
+						<td><p>फ़ोन</p></td>
+						<td><input type="text" id="गवाहान_का_फ़ोन_2" name="गवाहान_का_फ़ोन_2"></td>
+
+						<td><p>पिता का नाम</p></td>
+						<td><input type="text" id="गवाहान_का_पिता_का_नाम_2" name="गवाहान_का_पिता_का_नाम_2"></td>
+					</tr>
+					
+					<tr>
+						<td style="padding-top: 1rem; margin-inline-start: 40%;"><p style="font-size: 18px; font-weight: 700">लिंग:</p></td>
+						<td>पुरुष&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="लिंग_2" value="पुत्र" /></td>
+						<td>महिला&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="लिंग_2" value="पुत्री" /></td>
+					</tr>
+						
+					<tr>
+
+						<td>
+							<p>सड़क की स्थित</p>
+							<input type="text" id="सड़क_की_स्थित" name="सड़क_की_स्थित">
+						</td>
+						
+						<td style="margin-inline-start: 15%;">
+							<p>मसविदाकर्ता</p>
+							<input type="text" id="मसविदाकर्ता" name="मसविदाकर्ता">
+						</td>
+
+						<td style="margin-inline-start: 15%;">
+							<p>दिनांक</p>
+							<input type="text" id="दिनांक" name="दिनांक">
+						</td>
+					</tr>
+					
 				</tbody>
 			</table>
 

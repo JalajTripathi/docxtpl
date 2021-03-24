@@ -2,7 +2,16 @@ from flask import Flask, send_file, render_template, request
 from flask.wrappers import Request
 import generate
 
-app = Flask(__name__)
+import os
+import sys
+
+if getattr(sys, 'frozen', False):
+    template_folder = os.path.join(sys._MEIPASS, 'templates')
+    app = Flask(__name__, template_folder=template_folder)
+else:
+    app = Flask(__name__)
+
+# app = Flask(__name__)
 
 @app.route("/")
 def index():
@@ -12,6 +21,7 @@ def index():
 def gen_docx():
     formData = {}
     formData['विक्रय_मूल्य'] = request.form['विक्रय_मूल्य']
+    formData['विक्रय_मूल्य_शब्दों_में'] = request.form['विक्रय_मूल्य_शब्दों_में']
     formData['मालियत'] = request.form['मालियत']
     formData['देय_स्टाम्प'] = request.form['देय_स्टाम्प']
     formData['क्षेत्र_दर'] = request.form['क्षेत्र_दर']
@@ -28,12 +38,31 @@ def gen_docx():
     formData['उत्तर'] = request.form.getlist('उत्तर[]')
     formData['दक्षिण'] = request.form.getlist('दक्षिण[]')
     formData['अनुमति'] = request.form['a']
+    formData['विक्रेता_का_आधार'] = request.form['विक्रेता_का_आधार']
+    formData['विक्रेता_का_फ़ोन'] = request.form['विक्रेता_का_फ़ोन']
+    formData['विक्रेता_का_पैन'] = request.form['विक्रेता_का_पैन']
+    formData['क्रेता_का_आधार'] = request.form['क्रेता_का_आधार']
+    formData['क्रेता_का_फ़ोन'] = request.form['क्रेता_का_फ़ोन']
+    formData['क्रेता_का_पैन'] = request.form['क्रेता_का_पैन']
+    formData['गवाहान_का_नाम_1'] = request.form['गवाहान_का_नाम_1']
+    formData['गवाहान_का_पता_1'] = request.form['गवाहान_का_पता_1']
+    formData['गवाहान_का_फ़ोन_1'] = request.form['गवाहान_का_फ़ोन_1']
+    formData['गवाहान_का_पिता_का_नाम_1'] = request.form['गवाहान_का_पिता_का_नाम_1']
+    formData['लिंग_1'] = request.form['लिंग_1']
+    formData['गवाहान_का_नाम_2'] = request.form['गवाहान_का_नाम_2']
+    formData['गवाहान_का_पता_2'] = request.form['गवाहान_का_पता_2']
+    formData['गवाहान_का_फ़ोन_2'] = request.form['गवाहान_का_फ़ोन_2']
+    formData['गवाहान_का_पिता_का_नाम_2'] = request.form['गवाहान_का_पिता_का_नाम_2']
+    formData['लिंग_2'] = request.form['लिंग_2']
+    formData['सड़क_की_स्थित'] = request.form['सड़क_की_स्थित']
+    formData['मसविदाकर्ता'] = request.form['मसविदाकर्ता']
+    formData['दिनांक'] = request.form['दिनांक']
+    
 
 
     half = formData['विक्रय_मूल्य']
-    print("FormData_0: ", int(half)/2)
     half = int(half)/2
-    print("FormData_1: ", (half))
+    
     formData['अर्ध_विक्रय_मूल्य'] = half
 
     # print("FormData_1: ", formData['चौहद्दी_गाटा_संख्या'][1])
