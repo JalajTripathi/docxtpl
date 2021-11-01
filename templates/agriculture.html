@@ -1,0 +1,371 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hi" xml:lang="hi">
+	<head>
+        <title>AK Enterprise</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<!-- <script src="https://www.google.com/jsapi"></script> -->
+		<style>
+			body{
+				background: linear-gradient(to right, #AA076B, #61045F);
+				color: white;
+				font-family: 'Poppins', sans-serif;
+			}
+			tbody > tr > td{
+				display: inline-block;
+				margin: 1rem;
+				text-align: center;
+			}
+
+			p{
+				display: inline-block;
+				text-align: end;
+				color: white;
+			}
+			.upload_btn{
+				font-family: 'Poppins',sans-serif;
+				font-size: 20px;
+				width: 250px;
+				height: 50px;
+				border-radius: 5px;
+				border: 1px solid transparent;
+				color: white;
+				padding: .5em 2em;
+				margin: 5% 40%;
+				background: linear-gradient(to right, #a86ce6, #661eae);
+				box-shadow: 0 8px 32px 0 rgb(37, 38, 51, 0.8);
+			}
+			.main-section{
+				/*width: 100%;*/
+				margin: 0 10px;
+				padding: 0 20px;
+				overflow-x: hidden;
+			}
+			.add_more{
+				border: none;
+				background: transparent;
+				color: #5eb4ff;
+				font-weight: 500;
+				text-align: center;
+				width: 100%;
+				margin: 5% 50%;
+			}
+			input[type=text], textarea[type=text], input[type=number] {
+				width: 100%;
+				color: white;
+				padding: 12px 1rem;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
+				background: rgba( 255, 255, 255, 0.5);
+				box-shadow: 0 8px 32px 0 rgb(37, 38, 51, 0.8);
+				border-radius: 1rem;
+				margin-block-start: 1em;
+				margin-block-end: 1em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+        
+		<div class="container mb-5 pt-5">
+			<h1 style="text-align: center; color: white; font-size: 4rem;">Agriculture Agreement Form</h1>
+		</div>
+		<div class="container mx-auto mb-5" style="border-radius: 50px ;box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(255, 255, 255, 0.3)">
+			<form action="/gen" method=POST>
+				<div class="main-section">
+					<table style="width: 100%">
+						<tbody id="gata_outer">
+							<tr>
+								<td>
+									<p>विक्रय मूल्य</p>
+									<input type="number" id ="विक्रय_मूल्य" name="विक्रय_मूल्य" required />
+								</td>
+		
+								<td>
+									<p>विक्रय मूल्य(शब्दों में)</p>
+									<input type="text" id ="विक्रय_मूल्य_शब्दों_में" name="विक्रय_मूल्य_शब्दों_में" required/>
+								</td>
+								
+								<td>
+									<p>मालियत</p>
+									<input type="text" id ="मालियत" name="मालियत" required/>
+								</td>
+		
+								<td>
+									<p>देय स्टाम्प</p>
+									<input type="text" id ="देय_स्टाम्प" name="देय_स्टाम्प" required/>
+								</td>
+							</tr>
+		
+							<tr>
+								<td>
+									<p>क्षेत्र दर&nbsp;&nbsp;&nbsp;&nbsp;</p>
+									<input type="text" id ="क्षेत्र_दर" name="क्षेत्र_दर" required/>
+								</td>
+								<td>
+									<p>सम्पत्ति का विवरण&nbsp;&nbsp;&nbsp;&nbsp;</p>
+									<input type="text" id ="सम्पत्ति_का_विवरण" name="सम्पत्ति_का_विवरण" required/>
+								</td>
+								<td>
+									<p>ग्राम कोड</p>
+									<input type="text" id ="ग्राम_कोड" name="ग्राम_कोड" required/>
+								</td>
+		
+								<td>
+									<p>ग्राम&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+									<input type="text" id ="ग्राम" name="ग्राम" required/>
+								</td>	
+							</tr>
+							
+							<tr>
+								<td>
+									<p style="text-align: left">विक्रेता व क्रेता दोनों अनुसूचित जाति से है?</p>
+								</td>
+								<td>
+									<input type="checkbox" name="a" value="foØsrk o Øsrk nksuksa vuqlwfpr tkfr ls gSA" />
+								</td>
+								<td>
+									<p style="text-align: left">विक्रेता व क्रेता दोनों अनुसूचित जाति से नही है?</p>
+								</td>
+								<td>
+									<input type="checkbox" name="a" value="foØsrk o Øsrk nksuksa vuqlwfpr tkfr ls ugh gSA" />
+								</td>
+		
+								<td>
+									<p style="text-align: left">विक्रेता अनुसूचित जाति का व क्रेता अनुसूचित जाति का सदस्य नहीं है?</p>
+								</td>
+								<td>
+									<input type="checkbox" name="a" value="foØsrk vuqlwfpr tkfr dk lnL; gS o Øsrk vuqlwfpr tkfr dk lnL; ugha gSA ftldh l{ke vf/kdkjh }kjk foØ; vuqefr çkIr gSA" />
+								</td>
+		
+								<td>
+									<p style="text-align: left">क्रेता अनुसूचित जाति का व विक्रेता अनुसूचित जाति का सदस्य नहीं है?</p>
+								</td>
+								<td>
+									<input type="checkbox" name="a" value="Øsrk vuqlwfpr tkfr dk lnL; gS o foØsrk vuqlwfpr tkfr dk lnL; ugha gSA ftldh l{ke vf/kdkjh }kjk foØ; vuqefr çkIr gSA" />
+								</td>
+		
+							</tr>
+		
+							<tr>
+								<td>
+									<p>संपत्ति का क्षेत्रफल</p>
+									<textarea type="text" id ="संपत्ति_का_क्षेत्रफल" name="संपत्ति_का_क्षेत्रफल" required></textarea>
+								</td>
+		
+								<td><p>प्रतिफल की धनराशि</p>
+									<input type="text" id ="प्रतिफल_की_धनराशि" name="प्रतिफल_की_धनराशि" required/>
+								</td>
+							</tr>
+		
+							<tr>
+		
+								<td><p>विक्रेता का विवरण </p>
+									<textarea type="text" id ="विक्रेता_का_विवरण" name="विक्रेता_का_विवरण" required></textarea>
+								</td>
+		
+								<td>
+									<p>विक्रेता का आधार</p>
+									<input type="text" id ="विक्रेता_का_आधार" name="विक्रेता_का_आधार" required/>
+								</td>
+		
+								<td>
+									<p>विक्रेता का फ़ोन</p>
+									<input type="text" id ="विक्रेता_का_फ़ोन" name="विक्रेता_का_फ़ोन" required/>
+								</td>
+		
+								<td>
+									<p>विक्रेता का पैन</p>
+									<input type="text" id ="विक्रेता_का_पैन" name="विक्रेता_का_पैन" required/>
+								</td>
+							</tr>
+		
+							<tr>
+								<td><p>क्रेता का विवरण&nbsp;&nbsp;</p> 
+									<textarea type="text" id ="क्रेता_का_विवरण" name="क्रेता_का_विवरण" required></textarea>
+								</td>
+		
+								<td >
+									<p>क्रेता का आधार&nbsp;&nbsp;</p>
+									<input type="text" id ="क्रेता_का_आधार" name="क्रेता_का_आधार" required/>
+								</td>
+		
+								<td >
+									<p>क्रेता का फ़ोन&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+									<input type="text" id ="क्रेता_का_फ़ोन" name="क्रेता_का_फ़ोन" required/>
+								</td>
+		
+								<td >
+									<p>क्रेता का पैन&nbsp;&nbsp;&nbsp;&nbsp;</p>
+									<input type="text" id ="क्रेता_का_पैन" name="क्रेता_का_पैन" />
+								</td>
+		
+							</tr>
+		
+							<tr id="gata_inner">
+								<td >
+									<p>चौहद्दी: गाटा संख्या</p>
+									<input type="text" id="चौहद्दी_गाटा_संख्या" name="चौहद्दी_गाटा_संख्या[]" required>
+								</td>
+								<td>
+									<p>पूरब&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+									<input type="text" id="पूरब[]" name="पूरब[]" required>
+								</td>
+								
+								<td>
+									<p>पश्चिम&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+									<input type="text" id="पश्चिम" name="पश्चिम[]" required>
+								</td>
+								
+								<td>
+									<p>उत्तर&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+									<input type="text" id="उत्तर" name="उत्तर[]" required>
+								</td>
+								
+								<td>
+									<p>दक्षिण</p>
+									<input type="text" id="दक्षिण" name="दक्षिण[]" required>
+								</td>
+		
+								
+								
+							</tr>
+		
+							<tr >
+								<td style="margin-inline-start: 40%;">
+									<button class="add_more" type="button" onclick="myFunction()">+ Add more sections</button>
+								</td>
+							</tr>
+		
+							<tr style="padding-top: 100px;">
+								<td><p>1. गवाहान का नाम</p></td>
+								<td><input type="text" id="गवाहान_का_नाम_1" name="गवाहान_का_नाम_1" required></td>
+		
+								<td><p>पता</p></td>
+								<td><input type="text" id="गवाहान_का_पता_1" name="गवाहान_का_पता_1" required></td>
+		
+								<td><p>फ़ोन</p></td>
+								<td><input type="text" id="गवाहान_का_फ़ोन_1" name="गवाहान_का_फ़ोन_1" required></td>
+		
+								<td><p>पिता का नाम</p></td>
+								<td><input type="text" id="गवाहान_का_पिता_का_नाम_1" name="गवाहान_का_पिता_का_नाम_1" required></td>
+							</tr>
+		
+							<tr>
+								<td style="padding-top: 1rem; margin-inline-start: 40%;"><p style="font-size: 18px; font-weight: 700">लिंग:</p></td>
+								<td>पुरुष&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="लिंग_1" value="पुत्र" /></td>
+								<td>महिला&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="लिंग_1" value="पुत्री" /></td>
+								
+							</tr>
+		
+							<tr>
+								<td><p>2. गवाहान का नाम</p></td>
+								<td><input type="text" id="गवाहान_का_नाम_2" name="गवाहान_का_नाम_2" required></td>
+		
+								<td><p>पता</p></td>
+								<td><input type="text" id="गवाहान_का_पता_2" name="गवाहान_का_पता_2" required></td>
+		
+								<td><p>फ़ोन</p></td>
+								<td><input type="text" id="गवाहान_का_फ़ोन_2" name="गवाहान_का_फ़ोन_2" required></td>
+		
+								<td><p>पिता का नाम</p></td>
+								<td><input type="text" id="गवाहान_का_पिता_का_नाम_2" name="गवाहान_का_पिता_का_नाम_2" required></td>
+							</tr>
+							
+							<tr>
+								<td style="padding-top: 1rem; margin-inline-start: 40%;"><p style="font-size: 18px; font-weight: 700">लिंग:</p></td>
+								<td>पुरुष&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="लिंग_2" value="पुत्र" /></td>
+								<td>महिला&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="लिंग_2" value="पुत्री" /></td>
+							</tr>
+								
+							<tr>
+		
+								<td>
+									<p>सड़क की स्थित</p>
+									<input type="text" id="सड़क_की_स्थित" name="सड़क_की_स्थित" required>
+								</td>
+								
+								<td style="margin-inline-start: 15%;">
+									<p>मसविदाकर्ता</p>
+									<input type="text" id="मसविदाकर्ता" name="मसविदाकर्ता" required>
+								</td>
+		
+								<!-- <td style="margin-inline-start: 15%;">
+									<p>दिनांक</p>
+									<input type="text" id="दिनांक" name="दिनांक" required>
+								</td> -->
+							</tr>
+							
+						</tbody>
+					</table>
+		
+					<div>
+						<button type="submit" class="upload_btn ">
+							Download Form
+						</button>
+					</div>
+					
+				</div>
+				</form>
+
+		</div>
+		<!--  -->
+    
+    </body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript">  
+		google.load("elements", "1", {  
+			packages: "transliteration"  
+		});  
+	  
+		function onLoad() {  
+			var options = {  
+				sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,  
+				destinationLanguage: [google.elements.transliteration.LanguageCode.HINDI],  
+				shortcutKey: 'ctrl+g',  
+				transliterationEnabled: true  
+			};  
+	  
+			var control = new google.elements.transliteration.TransliterationControl(options);  
+			control.makeTransliteratable(['transliterateTextarea']);  
+		}  
+		google.setOnLoadCallback(onLoad);  
+	</script> -->
+	<script>
+		$("input:checkbox").on('click', function() {
+			// in the handler, 'this' refers to the box clicked on
+			var $box = $(this);
+			if ($box.is(":checked")) {
+				// the name of the box is retrieved using the .attr() method
+				// as it is assumed and expected to be immutable
+				var group = "input:checkbox[name='" + $box.attr("name") + "']";
+				// the checked state of the group/box on the other hand will change
+				// and the current value is retrieved using .prop() method
+				$(group).prop("checked", false);
+				$box.prop("checked", true);
+			} else {
+				$box.prop("checked", false);
+			}
+			});
+		function myFunction() {
+		  var itm = document.getElementById("gata_inner")
+
+		  // document.getElementById("gata").appendChild(btn);
+
+		  var cln = itm.cloneNode(true);
+  		  document.getElementById("gata_outer").appendChild(cln);
+		}
+	</script>
+</html>

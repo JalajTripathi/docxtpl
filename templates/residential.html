@@ -1,0 +1,349 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hi" xml:lang="hi">
+	<head>
+        <title>AK Enterprise</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<!-- <script src="https://www.google.com/jsapi"></script> -->
+		<style>
+			body{
+				background: linear-gradient(to right, #AA076B, #61045F);
+				color: white;
+				font-family: 'Poppins', sans-serif;
+			}
+			tbody > tr > td{
+				display: inline-block;
+				margin: 1rem;
+				text-align: center;
+			}
+
+			p{
+				display: inline-block;
+				text-align: end;
+				color: white;
+			}
+			.upload_btn{
+				font-family: 'Poppins',sans-serif;
+				font-size: 20px;
+				width: 250px;
+				height: 50px;
+				border-radius: 5px;
+				border: 1px solid transparent;
+				color: white;
+				padding: .5em 2em;
+				margin: 5% 40%;
+				background: linear-gradient(to right, #a86ce6, #661eae);
+				box-shadow: 0 8px 32px 0 rgb(37, 38, 51, 0.8);
+			}
+			.main-section{
+				/*width: 100%;*/
+				margin: 0 10px;
+				padding: 0 20px;
+				overflow-x: hidden;
+			}
+			.add_more{
+				border: none;
+				background: transparent;
+				color: #5eb4ff;
+				font-weight: 500;
+				text-align: center;
+				width: 100%;
+				/* margin: 5% 50%; */
+			}
+			input[type=text], textarea[type=text], input[type=number] {
+				width: 100%;
+				color: white;
+				padding: 12px 1rem;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
+				background: rgba( 255, 255, 255, 0.5);
+				box-shadow: 0 8px 32px 0 rgb(37, 38, 51, 0.8);
+				border-radius: 1rem;
+				margin-block-start: 1em;
+				margin-block-end: 1em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+				max-height: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+        
+		<div class="container mb-5 pt-5">
+			<h1 style="text-align: center; color: white; font-size: 4rem;">Residential Agreement Form</h1>
+		</div>
+		<div class="container mx-auto mb-5" style="border-radius: 50px ;box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(255, 255, 255, 0.3)">
+			<form action="/residential_form" method=POST>
+				<div class="main-section" id="gata_outer">
+					<div class="row mt-5">
+						<div class="col-md-3 text-center">
+							<label for="विक्रय_मूल्य">विक्रय मूल्य</label>
+							<input type="number" id ="विक्रय_मूल्य" name="विक्रय_मूल्य" required />
+						</div>
+						<div class="col-md-3 text-center">
+							<label for="विक्रय_मूल्य_शब्दों_में">विक्रय मूल्य(शब्दों में)</label>
+							<input type="text" id ="विक्रय_मूल्य_शब्दों_में" name="विक्रय_मूल्य_शब्दों_में" required/>
+						</div>
+						<div class="col-md-3 text-center">
+							<label for="मालियत">मालियत</label>
+							<input type="text" id ="मालियत" name="मालियत" required/>
+						</div>
+						<div class="col-md-3 text-center">
+							<label for="देय_स्टाम्प">देय स्टाम्प</label>
+							<input type="text" id="देय_स्टाम्प" name="देय_स्टाम्प" required/>
+						</div>	
+					</div>
+					<div class="row mt-4">
+						<div class="col-md-3 text-center">
+							<label for="क्षेत्र_दर">क्षेत्र दर</label>
+							<input type="text" id ="क्षेत्र_दर" name="क्षेत्र_दर" required/>
+						</div>
+						<div class="col-md-3 text-center">
+							<label for="सम्पत्ति_का_विवरण">सम्पत्ति का विवरण</label>
+							<input type="text" id ="सम्पत्ति_का_विवरण" name="सम्पत्ति_का_विवरण" required/>
+						</div>
+						<div class="col-md-3 text-center">
+							<label for="ग्राम_कोड">ग्राम कोड</label>
+							<input type="text" id ="ग्राम_कोड" name="ग्राम_कोड" required/>
+						</div>
+						<div class="col-md-3 text-center">
+							<label for="ग्राम">ग्राम</label>
+							<input type="text" id ="ग्राम" name="ग्राम" required/>
+						</div>
+					</div>
+					<div class="row mt-4 p-3" style="border: 1px solid #fff; border-radius: 1em;">
+						<div class="col-md-3 d-flex offset-3">
+							<input class="mr-3 my-2" type="checkbox" name="a" value="महिला छूट अनुमन्य है" />
+							<label for="a">महिला छूट अनुमन्य है?</label>
+						</div>
+						<div class="col-md-3 d-flex">
+							<input class="mr-3 my-2" type="checkbox" name="a" value="महिला छूट अनुमन्य नही है" />
+							<label for="a">महिला छूट अनुमन्य नही है?</label>
+						</div>
+					</div>
+					<div class="row text-center mt-5">
+						<div class="col-md-6">
+							<label for="संपत्ति_का_क्षेत्रफल">संपत्ति का क्षेत्रफल</label>
+							<textarea type="text" id ="संपत्ति_का_क्षेत्रफल" name="संपत्ति_का_क्षेत्रफल" required></textarea>
+						</div>
+						<div class="col-md-6">
+							<label for="प्रतिफल_की_धनराशि">प्रतिफल की धनराशि</label>
+							<input type="text" id ="प्रतिफल_की_धनराशि" name="प्रतिफल_की_धनराशि" required/>
+						</div>
+					</div>
+					<div class="row text-center mt-4">
+						<div class="col-md-3">
+							<label for="विक्रेता_का_विवरण">विक्रेता का विवरण </label>
+							<textarea type="text" id ="विक्रेता_का_विवरण" name="विक्रेता_का_विवरण" required></textarea>
+						</div>
+						<div class="col-md-3">
+							<label for="विक्रेता_का_आधार">विक्रेता का आधार</label>
+							<input type="text" id ="विक्रेता_का_आधार" name="विक्रेता_का_आधार" required/>
+						</div>
+						<div class="col-md-3">
+							<label for="विक्रेता_का_फ़ोन">विक्रेता का फ़ोन</label>
+							<input type="text" id ="विक्रेता_का_फ़ोन" name="विक्रेता_का_फ़ोन" required/>
+						</div>
+						<div class="col-md-3">
+							<label for="विक्रेता_का_पैन">विक्रेता का पैन</label>
+							<input type="text" id ="विक्रेता_का_पैन" name="विक्रेता_का_पैन" required/>
+						</div>
+					</div>
+					<div class="row text-center mt-4">
+						<div class="col-md-3">
+							<label for="क्रेता_का_विवरण">क्रेता का विवरण</label> 
+							<textarea type="text" id ="क्रेता_का_विवरण" name="क्रेता_का_विवरण" required></textarea>
+						</div>
+						<div class="col-md-3">
+							<label for="क्रेता_का_आधार">क्रेता का आधार</label>
+							<input type="text" id ="क्रेता_का_आधार" name="क्रेता_का_आधार" required/>
+						</div>
+						<div class="col-md-3">
+							<label for="क्रेता_का_फ़ोन">क्रेता का फ़ोन</label>
+							<input type="text" id ="क्रेता_का_फ़ोन" name="क्रेता_का_फ़ोन" required/>
+						</div>
+						<div class="col-md-3">
+							<label for="क्रेता_का_पैन" >क्रेता का पैन</label>
+							<input type="text" id ="क्रेता_का_पैन" name="क्रेता_का_पैन" />
+						</div>
+					</div>
+					<div class="row text-center mt-3">
+						<div class="col-md-12 mt-3">
+							<label for="चौहद्दी_गाटा_संख्या">चौहद्दी: गाटा संख्या</label>
+								<input type="text" id="चौहद्दी_गाटा_संख्या" name="चौहद्दी_गाटा_संख्या[]" required>
+							</div>
+						<div class="col-md-3">
+							<label for="पूरब[]">पूरब</label>
+							<input type="text" id="पूरब[]" name="पूरब[]" required>
+						</div>
+						<div class="col-md-3">
+							<label for="पश्चिम[]">पश्चिम</label>
+							<input type="text" id="पश्चिम" name="पश्चिम[]" required>
+						</div>
+						<div class="col-md-3">
+							<label for="उत्तर[]">उत्तर</label>
+							<input type="text" id="उत्तर" name="उत्तर[]" required>
+						</div>
+						<div class="col-md-3">
+							<label for="दक्षिण[]">दक्षिण</label>
+							<input type="text" id="दक्षिण" name="दक्षिण[]" required>
+						</div>
+					</div>
+
+					<div class="row text-center mt-3" id="gata_inner">
+						<div class="col-md-12 mt-3">
+							<label for="चेक_संख्या">चेक संख्या:</label>
+								<input type="text" id="चेक_संख्या[]" name="चेक_संख्या[]" required>
+							</div>
+						<div class="col-md-3">
+							<label for="बैंक[]">बैंक</label>
+							<input type="text" id="बैंक[]" name="बैंक[]" required>
+						</div>
+						<div class="col-md-3">
+							<label for="शाखा[]">शाखा</label>
+							<input type="text" id="शाखा[]" name="शाखा[]" required>
+						</div>
+						<div class="col-md-3">
+							<label for="मूल्य[]">चेक मूल्य</label>
+							<input type="text" id="मूल्य[]" name="मूल्य[]" required>
+						</div>
+						<div class="col-md-3">
+							<label for="दिनांकित[]">चेक दिनांकित</label>
+							<input type="text" id="दिनांकित[]" name="दिनांकित[]" required>
+						</div>
+					</div>
+
+					<div class="row text-center mt-3" id="gata_add">
+
+					</div>
+					<div class="row text-center mt-4 mx-auto">
+						<div class="col-md-4 offset-4">
+							<button class="add_more text-white p-2" style="border: 1px solid #fff; border-radius: 1em;" type="button" onclick="myFunction()">
+								<i class="fa fa-plus "></i> Add more sections
+							</button>
+						</div>
+					</div>
+					<div class="row text-center mt-4">
+						<div class="col-md-3">
+							<label for="गवाहान_का_नाम_1">1. गवाहान का नाम</label>
+							<input type="text" id="गवाहान_का_नाम_1" name="गवाहान_का_नाम_1" required>
+						</div>
+						<div class="col-md-3">
+							<label for="गवाहान_का_पता_1">पता</label>
+							<input type="text" id="गवाहान_का_पता_1" name="गवाहान_का_पता_1" required>
+						</div>
+						<div class="col-md-3">
+							<label for="गवाहान_का_फ़ोन_1">फ़ोन</label>
+							<input type="text" id="गवाहान_का_फ़ोन_1" name="गवाहान_का_फ़ोन_1" required>
+						</div>
+						<div class="col-md-3">
+							<label for="गवाहान_का_पिता_का_नाम_1">पिता/पति का नाम</label>
+							<input type="text" id="गवाहान_का_पिता_का_नाम_1" name="गवाहान_का_पिता_का_नाम_1" required>
+						</div>
+					</div>
+					<div class="row text-center mt-3">
+						<div class="col-md-4"></div>
+						<div class="col-md-1">
+							<p style="font-size: 18px; font-weight: 700">संबंध:</p>
+						</div>
+						<div class="col-md-1">
+							<input type="checkbox" name="लिंग_1" value="पुत्र" />
+							<label for="लिंग_1">पुत्र</label>
+						</div>
+						<div class="col-md-1">
+							<input type="checkbox" name="लिंग_1" value="पुत्री" />
+							<label for="लिंग_1">पुत्री</label>
+						</div>
+						<div class="col-md-1">
+							<input type="checkbox" name="लिंग_1" value="पत्नी" />
+							<label for="लिंग_1">पत्नी</label>
+						</div>
+					</div>
+					<div class="row text-center mt-5">
+						<div class="col-md-3">
+							<label for="गवाहान_का_नाम_2">2. गवाहान का नाम</label>
+							<input type="text" id="गवाहान_का_नाम_2" name="गवाहान_का_नाम_2" required>
+						</div>
+						<div class="col-md-3">
+							<label for="गवाहान_का_पता_2">पता</label>
+							<input type="text" id="गवाहान_का_पता_2" name="गवाहान_का_पता_2" required>
+						</div>
+						<div class="col-md-3">
+							<label for="गवाहान_का_फ़ोन_2">फ़ोन</label>
+							<input type="text" id="गवाहान_का_फ़ोन_2" name="गवाहान_का_फ़ोन_2" required>
+						</div>
+						<div class="col-md-3">
+							<label for="गवाहान_का_पिता_का_नाम_2">पिता/पति का नाम</label>
+							<input type="text" id="गवाहान_का_पिता_का_नाम_2" name="गवाहान_का_पिता_का_नाम_2" required>
+						</div>
+					</div>
+					<div class="row text-center mt-3">
+						<div class="col-md-4"></div>
+						<div class="col-md-1">
+							<p style="font-size: 18px; font-weight: 700">संबंध:</p>
+						</div>
+						<div class="col-md-1">
+							<input type="checkbox" name="लिंग_2" value="पुत्र" />
+							<label for="लिंग_2">पुत्र</label>
+						</div>
+						<div class="col-md-1">
+							<input type="checkbox" name="लिंग_2" value="पुत्री" />
+							<label for="लिंग_2">पुत्री</label>
+						</div>
+						<div class="col-md-1">
+							<input type="checkbox" name="लिंग_1" value="पत्नी" />
+							<label for="लिंग_1">पत्नी</label>
+						</div>
+					</div>
+
+					<div class="row text-center mt-5">
+						<div class="col-md-6">
+							<label for="सड़क_की_स्थित">सड़क की स्थित</label>
+							<input type="text" id="सड़क_की_स्थित" name="सड़क_की_स्थित" required>
+						</div>
+						<div class="col-md-6">
+							<label for="मसविदाकर्ता">मसविदाकर्ता</label>
+							<input type="text" id="मसविदाकर्ता" name="मसविदाकर्ता" required>
+						</div>
+					</div>		
+				<div>
+				
+				<button type="submit" class="upload_btn ">
+					Download Form
+				</button>
+			</div>
+					
+				<!-- </div> -->
+				</form>
+		</div>
+    </body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$("input:checkbox").on('click', function() {
+			var $box = $(this);
+			if ($box.is(":checked")) {
+				var group = "input:checkbox[name='" + $box.attr("name") + "']";
+				$(group).prop("checked", false);
+				$box.prop("checked", true);
+			} else {
+				$box.prop("checked", false);
+			}
+			});
+		function myFunction() {
+		  var itm = document.getElementById("gata_inner")
+		  var cln = itm.cloneNode(true);
+  		  document.getElementById("gata_add").appendChild(cln);
+		}
+	</script>
+</html>
