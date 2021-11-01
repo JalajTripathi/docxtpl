@@ -1,3 +1,11 @@
-Flask==1.1.2
+click==8.0.1
 docxtpl==0.5.15
+Flask==1.1.2
+gunicorn==20.1.0
+itsdangerous==2.0.1
+Jinja2==3.0.1
+lxml==4.6.3
+MarkupSafe==2.0.1
 python-docx==0.8.6
+six==1.16.0
+Werkzeug==2.0.1
