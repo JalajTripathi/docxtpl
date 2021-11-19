@@ -11,9 +11,13 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	    <link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 		<!-- <script src="https://www.google.com/jsapi"></script> -->
 		<style>
+			/* @font-face {
+				font-family: 'HindiFont';
+				src: url('kruti_dev_240_regular.ttf') format('truetype');
+			} */
 			body{
 				background: linear-gradient(to right, #AA076B, #61045F);
 				color: white;
@@ -59,6 +63,7 @@
 				margin: 5% 50%;
 			}
 			input[type=text], textarea[type=text], input[type=number] {
+				/* font-family: 'HindiFont'; */
 				width: 100%;
 				color: white;
 				padding: 12px 1rem;

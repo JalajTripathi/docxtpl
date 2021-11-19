@@ -11,9 +11,8 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	    <link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-		<!-- <script src="https://www.google.com/jsapi"></script> -->
-		<style>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<!-- <style>
 			body{
 				background: linear-gradient(to right, #AA076B, #61045F);
 				color: white;
@@ -44,7 +43,6 @@
 				box-shadow: 0 8px 32px 0 rgb(37, 38, 51, 0.8);
 			}
 			.main-section{
-				/*width: 100%;*/
 				margin: 0 10px;
 				padding: 0 20px;
 				overflow-x: hidden;
@@ -58,9 +56,8 @@
 				width: 100%;
 				margin: 5% 50%;
 			}
-			input[type=text], textarea[type=text] {
+			input[type=text], input[type=password], textarea[type=text] {
 				width: 100%;
-				/*padding: 12px 20px;*/
 				color: white;
 				padding: 12px 1rem;
 				margin: 8px 0;
@@ -74,15 +71,21 @@
 				margin-block-end: 1em;
 				margin-inline-start: 0px;
 				margin-inline-end: 0px;
-
 			}
-			
-
-		</style>
+		</style> -->
 	</head>
 
 	<body>
-        
+		<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+        <label for="menu-icon"></label>
+        <nav class="nav"> 		
+            <ul class="pt-5">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Agriculture</a></li>
+                <li><a href="#">Residential</a></li>
+                <li><a href="#">Area Calculator</a></li>
+            </ul>
+        </nav>
 		<div class="container" style="margin-bottom: 1rem; padding-top: 1rem;">
 			<h1 style="text-align: center; color: white; font-size: 4rem;">AK Enterprise</h1>
 			<h1 style="text-align: center; margin: 3rem 0;">Login</h1>
@@ -99,7 +102,7 @@
 				</div>
 				<div>
 					<label for="password">Password: </label>
-					<input type="text" name="password" id="password" required>
+					<input type="password" name="password" id="password" required>
 				</div>
 				<div>
 	                <button type="submit" class="upload_btn">
@@ -130,14 +133,9 @@
 	</script> -->
 	<script>
 		$("input:checkbox").on('click', function() {
-			// in the handler, 'this' refers to the box clicked on
 			var $box = $(this);
 			if ($box.is(":checked")) {
-				// the name of the box is retrieved using the .attr() method
-				// as it is assumed and expected to be immutable
 				var group = "input:checkbox[name='" + $box.attr("name") + "']";
-				// the checked state of the group/box on the other hand will change
-				// and the current value is retrieved using .prop() method
 				$(group).prop("checked", false);
 				$box.prop("checked", true);
 			} else {
@@ -145,12 +143,7 @@
 			}
 			});
 		function myFunction() {
-		  // var btn = document.createElement("TR");
-		  // btn.innerHTML = "<td><p>चौहद्दी: विक्रीत भूमि गाटा संख्या –</p></td><td><input type="text" id="चौहद्दी_गाटा_संख्या" name="चौहद्दी_गाटा_संख्या"></td><td><p>पूरब</p></td><td><input type="text" id="पूरब" name="पूरब"></td><td><p>पश्चिम</p></td><td><input type="text" id="पश्चिम" name="पश्चिम"></td><td><p>उत्तर</p></td><td><input type="text" id="उत्तर" name="उत्तर"></td><td><p>दक्षिण</p></td><td><input type="text" id="दक्षिण" name="दक्षिण"></td><td><button onclick="myFunction()">Add more</button></td>"
 		  var itm = document.getElementById("gata_inner")
-
-		  // document.getElementById("gata").appendChild(btn);
-
 		  var cln = itm.cloneNode(true);
   		  document.getElementById("gata_outer").appendChild(cln);
 		}
